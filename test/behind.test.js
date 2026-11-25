@@ -52,11 +52,14 @@ describe('matchesAfter', () => {
 });
 
 describe('the libraries write no lookbehind', () => {
-  test('in lib/core and lib/catalog, outside their tests', () => {
+  test('in the core and the catalog, outside their tests and tools', () => {
     const found = [];
+    // Not their tests, nor the tools a checkout installs or runs (node_modules, scripts), which are not shipped.
+    const skipped = new Set(['test', 'node_modules', 'scripts', 'coverage']);
     for (const library of ['core', 'catalog'])
       for (const file of readdirSync(path.join(LIB, library), { recursive: true })) {
-        if (!/\.(ts|js)$/.test(file) || file.split(path.sep).includes('test') || file === 'behind.ts') continue;
+        if (!/\.(ts|js)$/.test(file) || file.split(path.sep).some((part) => skipped.has(part))) continue;
+        if (file === 'behind.ts' || file === 'eslint.config.js') continue;
         const text = readFileSync(path.join(LIB, library, file), 'utf8');
         if (/\(\?<[=!]/.test(text)) found.push(`${library}/${file}`);
       }

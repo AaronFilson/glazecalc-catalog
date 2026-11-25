@@ -23,5 +23,5 @@
     "skipLibCheck": false
   },
   "include": ["**/*.ts", "../core/globals.d.ts"],
-  "exclude": ["test/**"]
+  "exclude": ["test/**", "node_modules/**", "scripts/**"]
 }
