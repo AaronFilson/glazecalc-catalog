@@ -12,6 +12,7 @@ const HOST = Object.freeze({
   stull: catalog.STULL,
   densities: catalog.DENSITIES,
   expansion: catalog.EXPANSION,
+  bodies: catalog.BODIES,
   policy: catalog.POLICY
 });
 
@@ -40,6 +41,13 @@ export function* outputs(files) {
     'GLASS_VOLUMES',
     'MINERALS',
     'EXPANSION',
+    'BODIES',
+    'BODY_CLASSES',
+    'MATERIAL_CLASSES',
+    'RECIPE_TYPES',
+    'FORMING_METHODS',
+    'FIT_TESTS',
+    'SHEET_FIELDS',
     'LIMIT_SETS',
     'STULL',
     'FORMULA_MATERIALS',

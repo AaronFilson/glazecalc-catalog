@@ -1,7 +1,7 @@
 {
   "name": "@glazecalc/catalog",
-  "version": "0.1.0",
-  "description": "Glazecalc's tables and information for the glaze chemistry core: oxides, cones, limits and Stull, densities, expansion, policy, the English of every code, text readers and the standard materials.",
+  "version": "0.2.0",
+  "description": "Glazecalc's tables and information for the glaze and clay-body chemistry core: oxides, cones, limits and Stull, densities, expansion, clay-body tables, policy, the English of every code, text readers and the standard materials.",
   "license": "MIT",
   "author": "Aaron Filson / Candling Development Studio",
   "repository": {

@@ -10,6 +10,8 @@ describe('the densities', () => {
     assert.equal(DENSITIES.kinds, KINDS);
     assert.equal(DENSITIES.glassVolumes, GLASS_VOLUMES);
     assert.equal(MINERALS.quartz, 2.65);
+    assert.equal(MINERALS.kyanite, 3.61);
+    assert.equal(MINERALS.pyrophyllite, 2.81);
     assert.deepEqual(KINDS, { feldspar: 2.6, clay: 2.6 });
     assert.equal(GLASS_VOLUMES.B2O3, 38);
   });

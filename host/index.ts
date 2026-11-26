@@ -7,6 +7,7 @@ export * from '../cones.ts';
 export * from '../limits.ts';
 export * from '../densities.ts';
 export * from '../expansion.ts';
+export * from '../bodies.ts';
 export * from '../policy.ts';
 export * from '../readers.ts';
 export * from '../traits.ts';
