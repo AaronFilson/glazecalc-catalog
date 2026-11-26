@@ -66,7 +66,11 @@ const MINERALS: Readonly<Record<string, number>> = Object.freeze({
   minium: 8.9,
   hydrocerussite: 6.8,
   // Handbook of Mineralogy 9.14 measured, 9.35 calculated; webmineral 9.14-9.355; CRC/Kirk-Othmer 9.53-9.64.
-  litharge: 9.35
+  litharge: 9.35,
+  // Handbook of Mineralogy v1.2 3.53-3.65 (calc. 3.67); webmineral 3.56-3.67 (avg 3.61); Wikipedia 3.53-3.65.
+  kyanite: 3.61,
+  // Handbook of Mineralogy v1.2 2.65-2.90 (calc. 2.81); webmineral 2.8-2.9 (calc. 2.81); Vanderbilt PYRAX RG TDS 2.8-2.9.
+  pyrophyllite: 2.81
 });
 
 /** What a kind of material is taken to weigh, g/cm³, where its minerals all lie close to it. */

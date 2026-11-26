@@ -66,6 +66,8 @@ const BY_NAME: Readonly<Record<string, string | null>> = Object.freeze({
   'Iron chromate': 'chromite',
   'Cerium oxide': 'cerium oxide',
   'Silicon carbide (fine)': 'silicon carbide',
+  Kyanite: 'kyanite',
+  Pyrophyllite: 'pyrophyllite',
   // No estimate, and why.
   'Titanium Oxide': null,
   'Titanium dioxide': null,
@@ -94,7 +96,11 @@ const BY_NAME: Readonly<Record<string, string | null>> = Object.freeze({
   'Stain (proprietary)': null,
   'Bentonit 57 (Carl Jäger / Bodmer Ton 507)': null,
   'Bentonita (Prodesco)': null,
-  'Bentonite Trubond (Miles, Queensland)': null
+  'Bentonite Trubond (Miles, Queensland)': null,
+  'Sodium Silicate': null,
+  'Darvan 7': null,
+  'Darvan 811': null,
+  'Lignosulfonate (Additive A)': null
 });
 
 /** Why a standard material named in BY_NAME with no mineral has no estimate. */
@@ -126,7 +132,11 @@ const REASON_OF_NAME: Readonly<Record<string, string>> = Object.freeze({
   'Bentonit 57 (Carl Jäger / Bodmer Ton 507)': WHY_NOT.swelling,
   'Bentonita (Prodesco)': WHY_NOT.swelling,
   'Bentonite Trubond (Miles, Queensland)': WHY_NOT.swelling,
-  'CMC gum': WHY_NOT.noChemistry
+  'Sodium Silicate': WHY_NOT.mixture,
+  'CMC gum': WHY_NOT.noChemistry,
+  'Darvan 7': WHY_NOT.noChemistry,
+  'Darvan 811': WHY_NOT.noChemistry,
+  'Lignosulfonate (Additive A)': WHY_NOT.noChemistry
 });
 
 /** The density trait of a standard record known by its name; undefined for any other. */

@@ -8,13 +8,13 @@ the standard materials and additives. It imports only itself and the core, and t
 
 Import from an index, never a file inside the library (Glazecalc holds itself to this with an ESLint rule):
 
-| Index               | What it has                                                                                                        |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `index.ts`          | everything                                                                                                         |
-| `host/index.ts`     | the host's tables and readers: oxides, cones, limits and Stull, densities, expansion, policy; traits, ids and keys |
-| `locale/index.ts`   | the English of every code, and numbers in the reader's own decimal mark                                            |
-| `text/index.ts`     | material names, and readers of a target formula, firings and cones, and pasted recipes                             |
-| `standard/index.ts` | the reader of the standard records                                                                                 |
+| Index               | What it has                                                                                                                                     |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index.ts`          | everything                                                                                                                                      |
+| `host/index.ts`     | the host's tables and readers: oxides, cones, limits and Stull, densities, expansion, clay-body tables (`BODIES`), policy; traits, ids and keys |
+| `locale/index.ts`   | the English of every code, and numbers in the reader's own decimal mark                                                                         |
+| `text/index.ts`     | material names, and readers of a target formula, firings and cones, and pasted recipes                                                          |
+| `standard/index.ts` | the reader of the standard records                                                                                                              |
 
 A CommonJS `require` of an index takes all of it into a bundle, so a page that needs only the host takes
 `host/index.ts`. The standard records themselves are in `data/` beside it (one document a line, NDJSON).
@@ -30,6 +30,7 @@ A CommonJS `require` of an index takes all of it into a bundle, so a page that n
 | Stull's chart  | `limits.ts`    | R. T. Stull (1912), as Glazy reads it, by Derek Au (MIT; notice below)                                                                                                  |
 | Densities      | `densities.ts` | each value with the sources it was checked against in Glazecalc's [dry SG sources](https://github.com/AaronFilson/glazecalc/blob/master/docs/sources/dry-sg-sources.md) |
 | Expansion      | `expansion.ts` | Digitalfire's oxide pages, which follow West and Gerrow                                                                                                                 |
+| Clay bodies    | `bodies.ts`    | body classes, slip SG ranges, material classes, fit tests and standard clay sheets in [`docs/sources/clay-bodies.md`](docs/sources/clay-bodies.md)                      |
 
 Each file says more about its source beside the figures.
 

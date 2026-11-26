@@ -67,6 +67,11 @@ describe('the English', () => {
     assert.ok(once.warnings[0].includes('CoO, Fe₂O₃'));
     assert.equal(wordedWarnings([w(), w()], { once: false }).warningCodes.length, 2);
     assert.equal(wordedWarnings([{ code: 'trace-flux' }], { once: false }).warningCodes[0].params, undefined);
+    const bodyWarn = wordedWarnings(
+      [{ code: 'body-unclassified-materials', params: { materials: ['Local Red', 'Creek Clay'] } }],
+      { once: true }
+    );
+    assert.ok(bodyWarn.warnings[0].includes('Local Red, Creek Clay'));
   });
 
   test('words a function’s problems, keeping its this and its result', () => {

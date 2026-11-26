@@ -14,7 +14,8 @@ export interface TraitsRecord {
 }
 
 // Each test is given the name as the record has it, as the code once tested it.
-const KAOLIN_OR_BALL_CLAY = /kaolin|caol[ií]n|china clay|ball clay/i;
+const KAOLIN_OR_BALL_CLAY = /kaolin|caol[ií]n|china clay|ball clay|halloysite/i;
+const PLASTICIZER = /bentonit|veegum|macaloid|hectorit/i;
 
 // Each record's traits from its name, worked out once while its name is the same: the core asks often.
 const known = new WeakMap<object, { name: unknown; ownedBy: unknown; traits: Traits }>();
@@ -27,7 +28,9 @@ const readTraits = (record: TraitsRecord | null | undefined): Traits => {
     // A theoretical (stoichiometric) mineral: 'Kaolin (theoretical)'.
     theoretical: text.includes('(theoretical)'),
     // A calcined clay: it does not shrink as a raw one does.
-    calcined: /calcined/i.test(name),
+    calcined: /calcined|molochite/i.test(name),
+    // A swelling clay or plasticizer (bentonite, hectorite, veegum, macaloid).
+    plasticizer: PLASTICIZER.test(name),
     // Raw whiting or dolomite by name.
     rawCalcium: /^(whiting|dolomite)$/i.test(name),
     // Which colorant an additive is, by name.

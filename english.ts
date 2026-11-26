@@ -63,7 +63,19 @@ const MESSAGES: Readonly<Record<string, string>> = Object.freeze({
   'loi-molecular-weight':
     'The LOI of {material} ({loi}%) does not match its molecular weight, which gives {implied}%; the LOI was used.',
   'molecular-weight-low':
-    'The molecular weight of {material} ({molecularWeight}) is less than its fired oxides weigh ({firedWeight}), so it gives no LOI: check the formula and the molecular weight.'
+    'The molecular weight of {material} ({molecularWeight}) is less than its fired oxides weigh ({firedWeight}), so it gives no LOI: check the formula and the molecular weight.',
+  'body-expansion-quartz':
+    'The expansion ({expansion} × 10⁻⁶/°C) counts every oxide as glass. A body keeps some of its silica as quartz, and may grow cristobalite, which expand far more, so its real expansion is higher: compare bodies with it, but test glaze fit.',
+  'body-unclassified-materials':
+    'Unclassified materials ({materials}) count as non-plastic until given a material class.',
+  'body-porcelain-low-silica':
+    'Porcelains with less than about {min}% added silica ({silica}%) tend to craze glazes; test glaze fit.',
+  'body-drying-shrinkage-high':
+    'Drying shrinkage ({shrinkage}%) is above {max}%, where cracking and warping risk rises.',
+  'body-casting-plastic-range':
+    'Plastic clay share ({plastic}%) is outside the usual {low}–{high}% casting-slip window.',
+  'body-casting-bentonite-high':
+    'Swelling plasticizer ({plasticizer}%) exceeds {max}%, which can make a casting slip thixotropic and slow to drain.'
 });
 
 /** The English of a message with its values in place. Numbers are written to two places. */
@@ -96,6 +108,9 @@ const shown = (code: string, params: Params | undefined): Params | undefined => 
   }
   if (code === 'colorant-flux' && Array.isArray(params['oxides'])) {
     params['oxides'] = (params['oxides'] as unknown[]).map(formatFormula).join(', ');
+  }
+  if (code === 'body-unclassified-materials' && Array.isArray(params['materials'])) {
+    params['materials'] = (params['materials'] as unknown[]).map(String).join(', ');
   }
   return params;
 };

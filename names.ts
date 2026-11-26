@@ -191,4 +191,4 @@ const nameKey = (name: unknown): string =>
     .replace(/\p{M}/gu, '')
     .replace(/[^\p{L}\p{N}]/gu, '');
 
-export { FORMULA_MATERIALS, GENERIC_NAMES, nameKey };
+export { FORMULA_MATERIALS, GENERIC_NAMES, deepFreeze, nameKey };

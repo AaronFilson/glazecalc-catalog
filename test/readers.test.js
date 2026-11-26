@@ -30,6 +30,8 @@ describe('the readers', () => {
     assert.equal(traitsFromName(potters).rawCalcium, true);
     assert.equal(traitsFromName(undefined).theoretical, false);
     assert.equal(traitsFromName({ name: 'Kaolin (theoretical)' }).theoretical, true);
+    assert.equal(traitsFromName({ name: 'Wyoming Bentonite' }).plasticizer, true);
+    assert.equal(traitsFromName({ name: 'Molochite 200s' }).calcined, true);
   });
 
   test('know a standard material’s mineral by its name, and why some have none', () => {

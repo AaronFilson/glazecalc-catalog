@@ -2,6 +2,7 @@
 // densities, expansion, policy, readers), its names and English, its text readers (numbers, targets, firings,
 // pastes) and the standard records' reader. Glazecalc imports the catalog from here.
 
+export * from './bodies.ts';
 export * from './cones.ts';
 export * from './densities.ts';
 export * from './density-names.ts';
